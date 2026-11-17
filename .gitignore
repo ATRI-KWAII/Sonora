@@ -1,0 +1,48 @@
+# ========== Node / 前端 ==========
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log
+
+# ========== Java / Maven / 后端 ==========
+target/
+build/
+*.class
+*.jar
+*.war
+*.zip
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+
+# ========== IDE / 编辑器 ==========
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+.apt_generated
+
+# ========== 系统文件 ==========
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+
+# ========== 其他 ==========
+*.tmp
+.env
+.env.local
+.env.*.local

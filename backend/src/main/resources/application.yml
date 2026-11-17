@@ -1,0 +1,26 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+
+jwt:
+  secret: ${JWT_SECRET:FNEHfkXtQF68XS5GbmJB1MEqEhoE66n/ZKX+B35+szmlS++RTUns6I+98f+/bcPM}
+  access-ttl: 15m
+  refresh-ttl: 7d
+  issuer: dual-token-lab
+  audience: dual-token-lab-api
+  clock-skew: 60s
+
+spring:
+  datasource:
+    # 数据源：本机 MySQL 9.7，库名 webdata
+    # allowPublicKeyRetrieval=true：MySQL 8+ 默认 caching_sha2_password，本地开发不加会报 Public Key Retrieval is not allowed
+    url: jdbc:mysql://localhost:3306/webdata?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 表结构自己用 SQL 建，项目里不启用任何自动建表（MyBatis-Plus 不生成 DDL）
+mybatis-plus:
+  configuration:
+
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
